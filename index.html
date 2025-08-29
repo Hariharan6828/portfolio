@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> My Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background: linear-gradient(to bottom, #f8f9fc, #ffffff);
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #ddd;
+      z-index: 1000;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #6a5acd;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 40px;
+      padding: 80px 0;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      background: linear-gradient(to right, #6a5acd, #ff1493);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      margin: 20px 0;
+      color: #666;
+    }
+    .hero button {
+      background: #6a5acd;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 25px;
+      cursor: pointer;
+      margin-right: 10px;
+      transition: background 0.3s;
+    }
+    .hero button:hover {
+      background: #5a4abb;
+    }
+    .projects, .skills, .experience, .about, .contact {
+      padding: 80px 0;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2rem;
+      font-weight: bold;
+      background: linear-gradient(to right, #6a5acd, #ff1493);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .skills-list, .exp-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+    .skill-item {
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: 1px solid #ddd;
+      background: #f9f9f9;
+      font-size: 0.9rem;
+    }
+    .contact form {
+      display: grid;
+      gap: 15px;
+      max-width: 600px;
+      margin: auto;
+    }
+    .contact input, .contact textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+    }
+    .contact button {
+      background: #6a5acd;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #ddd;
+      margin-top: 40px;
+      color: #666;
+    }
+    .profile-pic {
+     width: 220px;
+     height: 220px;
+     border-radius: 50%;
+     object-fit: cover;
+     margin-bottom: 15px;
+     border: 3px solid #6a5acd;
+     }
+
+    @media(max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      nav ul {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">My Portfolio</div>
+        <ul>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero container" id="home">
+    <div>
+      <h1>Aspiring Python Developer | Data Science Enthusiast | Web Developer.</h1>
+      <p>“I am a passionate and motivated fresher with strong foundations in Python, 
+        Machine Learning, and Web Development. 
+        I enjoy solving real-world problems with code and continuously learning new technologies.”</p>
+      <button>Explore Projects</button>
+      <button><a href="mailto:hariharan.j6828@gmail.com"> Contact Me</a></button>
+    </div>
+    <div>
+      <div class="card" style="text-align:center;">
+        <img src="assets/img1.jpeg" alt="Profile Picture" class="profile-pic">
+        <h2>Hari Haran</h2>
+        <p>Email: hariharan.j6828@gmail.com</p>
+        <p>GitHub: Hariharan6568</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="projects container" id="projects">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="project-grid">
+      <div class="card"><h3>SMS Spam Detection</h3><p>Real-time spam classifier.</p></div>
+      <div class="card"><h3>Fake News Detector</h3><p>Transformer-based news classification.</p></div>
+      <div class="card"><h3>Portfolio Website</h3><p>Personal portfolio with HTML, CSS, JS.</p></div>
+      <div class="card"><h3>Restaurant website</h3><p>Restaurant website project with ( Flask )</p></div>
+      
+    </div>
+  </section>
+
+  <section class="skills container" id="skills">
+    <h2 class="section-title">Skills & Tools</h2>
+    <div class="skills-list">
+      <div class="skill-item">Python</div>
+      <div class="skill-item">Flask</div>
+      <div class="skill-item">React</div>
+      <div class="skill-item">Machine Learning</div>
+      <div class="skill-item">SQL</div>
+    </div>
+  </section>
+
+  <section class="experience container" id="experience">
+    <h2 class="section-title">Experience</h2>
+    <div class="exp-list">
+      <div class="card"><h3>ML Engineer</h3><p>2023 - Present</p><p>Built 10+ ML apps with Flask deployments.</p></div>
+      <div class="card"><h3>Data Analyst Intern</h3><p>2022 - 2023</p><p>Automated pipelines and dashboards.</p></div>
+    </div>
+  </section>
+
+  <section class="about container" id="about">
+    <h2 class="section-title">About Me</h2>
+    <div class="card">
+      <p>I'm Hari Haran, a Machine Learning engineer focused on secure, production-ready data products. I love turning data into minimal interfaces and measurable outcomes.</p>
+    </div>
+  </section>
+
+  <section class="contact container" id="contact">
+    <h2 class="section-title">Contact</h2>
+    <form onsubmit="submitForm(event)">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Hari Haran. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function submitForm(e) {
+      e.preventDefault();
+      const name = e.target.name.value;
+      alert(`Thanks ${name}! I'll reply soon.`);
+    }
+  </script>
+</body>
+</html>
